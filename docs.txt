@@ -1,2 +1,9 @@
-NEXT JS: 15.1.7
+NEXT JS: 0.1.0
 npx create-next-app@latest
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/chongobongo/tyson729.git
+git push -u origin main

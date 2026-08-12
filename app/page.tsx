@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -16,9 +17,9 @@ export default function Home() {
           Tyson 729
         </h1>
         <nav className="flex flex-col items-center gap-2 font-sans text-6xl text-white">
-          <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
-          <a href="#portfolio" className="hover:opacity-70 transition-opacity">Portfolio</a>
-          <a href="#contact" className="hover:opacity-70 transition-opacity">Contact</a>
+          <Link href="./pages/about" className="hover:opacity-70 transition-opacity">About</Link>
+          <Link href="./pages/folio" className="hover:opacity-70 transition-opacity">Portfolio</Link>
+          <Link href="./pages/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
         </nav>
       </div>
     </div>
