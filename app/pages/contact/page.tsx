@@ -1,4 +1,6 @@
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link"
+import background from "@/assets/imgs/contact/pittsburgh.land.norwalk.jpg"
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -8,8 +10,15 @@ const poppins = Poppins({
 
 const ContactPage = () => {
   return (
-    <div className='flex items-center justify-center min-h-screen bg-gray-300'>
-      <h1 className={`${poppins.className} text-6xl font-bold`}>Contact Page</h1>
+    <div className="relative flex flex-col flex-1 min-h-screen items-end bg-zinc-50 font-sans dark:bg-black">
+      <Image
+        src={background}
+        alt="Contact Page Image"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover z-0"
+      />
     </div>
   )
 }
