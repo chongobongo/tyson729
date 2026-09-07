@@ -10,7 +10,7 @@ export default function PagesLayout({
 }>) {
   return (
     <>
-      <nav className="flex items-center justify-between h-[68px] px-8 bg-gray-200 border-b border-gray-300">
+      <nav className="fixed sm:relative top-0 left-0 w-full flex items-center justify-between h-[68px] px-8 bg-gray-200 border-b border-gray-300 z-50">
         
         <Logo />
 
@@ -36,7 +36,9 @@ export default function PagesLayout({
         </div>
       </nav>
 
-      {children}
+      <div className="pt-[68px] sm:pt-0">
+        {children}
+      </div>
     </>
   );
 }
