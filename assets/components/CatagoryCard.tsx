@@ -6,8 +6,9 @@ import Image from "next/image"
 export const CatagoryCard = ({
     catagory,
 }: {
-    catgory : {
+    catagory : {
         img: string
+        url: string
     }
 }) => {
 
@@ -26,3 +27,5 @@ export const CatagoryCard = ({
                 </Link>
     )
 }
+
+export default CatagoryCard

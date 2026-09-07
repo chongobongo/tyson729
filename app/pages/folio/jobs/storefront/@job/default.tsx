@@ -15,7 +15,7 @@ const Default = () => {
               jobCard={{
                 id: item.id,
                 title: item.title,
-                img: item.img,
+                img: item.imgs[0]?.src,
                 logo: item.logo
               }}
           />
