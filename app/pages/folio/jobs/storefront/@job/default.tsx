@@ -1,4 +1,4 @@
-// Union Catagory List - Default Page
+// Storefront Job-Card - Default Page
 
 import Link from 'next/link'
 import { jobData } from '@/assets/data/data'
@@ -6,21 +6,21 @@ import { JobCard } from '@/assets/components/JobCard'
 
 const Default = () => {
   return (
-    <div className='flex flex-col p-4 gap-6 w-full max-w-6xl'>
+    <div className='flex flex-col p-4 w-full max-w-6xl'>
       {jobData
-        .filter((item) => item.catagory === 'union')
+        .filter((item) => item.catagory === 'storefront')
         .map((item) => (
           <Link key={item.id} href={`/pages/folio/jobs/union/${item.id}`}>
             <JobCard
               jobCard={{
                 id: item.id,
                 title: item.title,
-                img: item.imgs.find((image) => image.tag.includes('hero'))!.src,
+                img: item.img,
                 logo: item.logo
               }}
-            />
-          </Link>
-        ))}
+          />
+        </Link>
+      ))}
     </div>
   )
 }

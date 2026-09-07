@@ -1,7 +1,6 @@
-// Union Job-Description - Page
+// Stroefront Job-Description - Page
 
 import { jobData } from '@/assets/data/data'
-import { ImageCarousel } from '@/assets/components/Carousel'
 
 const JobDescriptionPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
@@ -13,10 +12,7 @@ const JobDescriptionPage = async ({ params }: { params: Promise<{ id: string }> 
 
   return (
     <div className='p-4'>
-      <h2 className='text-2xl font-bold'>Show Title: {job.title}</h2>
-      <h2 className='text-2xl font-bold'>Paint Boss: {job.paint_boss}</h2>
-      <h2 className='text-2xl font-bold'>Job Description: {job.job_description}</h2>
-      <ImageCarousel images={job.imgs} />
+      <h2 className='text-2xl font-bold'>{job.title}</h2>
     </div>
   )
 }

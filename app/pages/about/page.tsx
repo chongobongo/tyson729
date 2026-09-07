@@ -1,20 +1,25 @@
 // About Page
 
-import { Carattere } from "next/font/google"
+import { jobData } from '@/assets/data/data'
+import { ImageCarousel } from '@/assets/components/Carousel'
 import Image from "next/image"
 import Link from "next/link"
 import about from "@/assets/imgs/about/tot.caladv.jpg"
 
-const carattere = Carattere({
-  subsets: ['latin'],
-  weight: ['400'],
-})
-
 const AboutPage = () => {
+
+const heroImages = jobData.flatMap((job) =>
+  job.imgs.filter((img) => img.tag.includes("hero"))
+)
+
+  if (!heroImages) {
+    return <div className='p-4'>Job not found.</div>
+  }
+
   return (
     <main className="flex min-h-screen">
       <div className="relative w-1/3 h-screen">
-      <Link href="./jobs/tot-caladv">
+      <Link href="./folio/jobs/entertainment/terror">
         <Image
           src={about}
           alt="About Page Image"
@@ -25,11 +30,12 @@ const AboutPage = () => {
         /></Link>
       </div>
 
-      <div className="w-2/3 text-center">
-        <h1 id="headline" className={`${carattere.className} mt-60 text-6xl`}>Tyson Dolan</h1>
-        <p id="text" className='p-6'>
-          As a member of Local 729 for over 30 years, I have had the oppourtunity...
+      <div id="ui" className="font-geistSans w-2/3 text-center">
+        <h1 id="headline" className="mt-10 text-6xl">Tyson Dolan</h1>
+        <p id="text" className='text-2xl p-6'>
+          As a member of Local 729 for over 30 years, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus, sed dictum nisl ullamcorper sed. Sed vel enim sit amet nunc viverra dapibus nec ut felis. Integer sit amet cursus ligula, sed suscipit orci.
         </p>
+        <ImageCarousel images={heroImages} />
       </div>
     </main>
   )

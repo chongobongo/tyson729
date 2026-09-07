@@ -1,13 +1,7 @@
 // Directory
 
-import { Poppins } from 'next/font/google'
 import { IndexCard } from '@/assets/components/IndexCard'
 import { folioDirectoryIndex } from '@/assets/data/data'
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['700'],
-})
 
 const FolioPage = () => {
 

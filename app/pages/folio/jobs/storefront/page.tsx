@@ -1,10 +1,8 @@
-import React from 'react'
+// Storefront List - Defualt Page
 
 const page = () => {
   return (
-    <div>
-      Storefront Page
-    </div>
+  null
   )
 }
 

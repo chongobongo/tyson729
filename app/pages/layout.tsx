@@ -1,4 +1,7 @@
+// Pages Secondary Layout - Navbar
+
 import Link from 'next/link'
+import { Logo } from '@/assets/components/Logo';
 
 export default function PagesLayout({
   children,
@@ -8,12 +11,7 @@ export default function PagesLayout({
   return (
     <>
       <nav className="flex items-center justify-between h-[68px] px-8 bg-gray-200 border-b border-gray-300">
-        <Link
-          href="/"
-          className="flex items-baseline gap-[2px] text-xl font-bold tracking-tight text-gray-900 select-none"
-        >
-          <span className="text-red-600">Tyson</span>729
-        </Link>
+        <Logo />
 
         <div className="flex items-center gap-9">
           <Link

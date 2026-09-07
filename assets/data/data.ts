@@ -1,4 +1,3 @@
-
 import union from "@/assets/imgs/folio-directory/directory/film-samwong-babylon.jpg"
 import storefront from "@/assets/imgs/folio-directory/directory/storefront-goodies-lbc.jpg"
 import structural from "@/assets/imgs/folio-directory/structural/spacemountain.dwi.jpg"
@@ -11,11 +10,18 @@ import wall from "@/assets/imgs/folio-directory/wall/strawman-tezza.jpg"
 
 
 // Job List Images
+
+// Barry
 import barry from "@/assets/imgs/jobs/barry/helicopter-barry.jpg"
 import barryLogo from "@/assets/imgs/jobs/barry/barryLogo.jpg"
+import barry001 from "@/assets/imgs/jobs/barry/heli-2-barry.jpg"
+// Babylon
 import babylon from "@/assets/imgs/jobs/babylon/zuckers.jpg"
 import babylonLogo from "@/assets/imgs/jobs/babylon/babylonLogo.jpg"
-import deadToMe from "@/assets/imgs/jobs/deadToMe/surf.jpg"
+import babylon001 from "@/assets/imgs/jobs/babylon/ambulance_001_babylon.jpg"
+// The Land
+import theLand from "@/assets/imgs/jobs/The Land/land.helmet.jpg"
+import theLandLogo from "@/assets/imgs/jobs/The Land/theLandLogo.jpg"
 
 export const folioDirectoryIndex = [
     {
@@ -68,24 +74,38 @@ export const folioDirectoryIndex = [
     }
 ]
 
-export const unionJobListData = [
-    {
+export const jobData = [
+   {
         id: "0",
         title: "Barry",
-        img: barry.src,
+        paint_boss: "Scott Rainie",
+        job_title: "Set Painter/Signwriter",
+        job_description: "Stage and Location, Hand Lettering, Applied Graphics, Matched Color, Various Finishes",
+        catagory: "union",
+        imgs: [
+            { src: barry.src, tag: ["hero", "union", "barry"], alt: "Barry Image" },
+            { src: barry001.src, tag: ["helicopter", "vehicle_hero", "barry"], alt: "Helicopter - Barry" },
+        ],
         logo: barryLogo.src
     },
     {
         id: "1",
         title: "Babylon",
-        img: babylon.src,
+        catagory: "union",
+        imgs: [
+            { src: babylon.src, tag: ["hero", "union", "babylon"], alt: "Babylon Image" },
+            { src: babylon001.src, tag: ["ambulance", "vehicle_hero", "babylon"], alt: "Ambulance - Babylon" },
+        ],
         logo: babylonLogo.src
     },
     {
         id: "3",
-        title: "Dead To Me",
-        img: deadToMe.src,
-        logo: babylonLogo.src
+        title: "The Land",
+        catagory: "union",
+        imgs: [
+            { src: theLand.src, tag: ["hero", "union", "the land", "land"], alt: "The Land Image" },
+        ],
+        logo: theLandLogo.src
     }
 ]
 
