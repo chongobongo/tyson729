@@ -11,6 +11,7 @@ export default function PagesLayout({
   return (
     <>
       <nav className="flex items-center justify-between h-[68px] px-8 bg-gray-200 border-b border-gray-300">
+        
         <Logo />
 
         <div className="flex items-center gap-9">

@@ -23,8 +23,8 @@ export const IndexCard = ({
 
     return (
                 <Link href={`./folio/jobs/${catagory.url}`}>
-                    <div id="card-container" className="h-44 w-44 p-2 grid grid-cols-1 text-center rounded-lg shadow-lg bg-white">
-                        <div id="image" className="relative w-full h-28">
+                    <div id="card-container" className="w-full p-2 grid grid-cols-1 text-center rounded-lg shadow-lg bg-white">
+                        <div id="image" className="relative w-full aspect-square">
                             <Image
                                 src={catagory.img}
                                 fill
@@ -32,7 +32,7 @@ export const IndexCard = ({
                                 alt='catagory_image'
                             />
                         </div>
-                        <div id="headline" className={`text-xl ${protestFont.className}`}>
+                        <div id="headline" className={`text-base sm:text-xl ${protestFont.className}`}>
                             {catagory.header}
                         </div>
                     </div>
