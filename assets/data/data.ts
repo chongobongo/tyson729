@@ -61,7 +61,7 @@ export const jobData = [
     },
    {
         id: "400",
-        title: "Watertower / Paramount Pictures",
+        title: "Watertower",
         paint_boss: "Leonard Russo",
         job_title: "Signwriter",
         job_description: "Paint letter and logo on water tower",
