@@ -1,7 +1,6 @@
-// Index Card
+// Index Card - Component
 
 import Image from "next/image"
-import Link from "next/link"
 import { Protest_Strike } from "next/font/google"
 
 const protestFont = Protest_Strike({
@@ -10,32 +9,33 @@ const protestFont = Protest_Strike({
 })
 
 export const IndexCard = ({
-    catagory,
+  index,
 }: {
-    catagory: {
+  index: {
     id: string
-    url: string
-    header: string
+    index: string
     img: string
-    },
-
+  }
 }) => {
-
-    return (
-                <Link href={`./folio/jobs/${catagory.url}`}>
-                    <div id="card-container" className="w-full p-2 grid grid-cols-1 text-center rounded-lg shadow-lg bg-white">
-                        <div id="image" className="relative w-full aspect-square">
-                            <Image
-                                src={catagory.img}
-                                fill
-                                className="object-contain"
-                                alt='catagory_image'
-                            />
-                        </div>
-                        <div id="headline" className={`text-base sm:text-xl ${protestFont.className}`}>
-                            {catagory.header}
-                        </div>
-                    </div>
-                </Link>
-    )
+  return (
+    <div
+      id="card-container"
+      className="grid w-full grid-cols-1 rounded-lg bg-white p-2 text-center shadow-lg transition-shadow hover:shadow-xl"
+    >
+      <div id="image" className="relative aspect-square w-full bg-gray-100">
+        {index.img ? (
+          <Image
+            src={index.img}
+            fill
+            sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+            className="object-contain"
+            alt={`${index.index} image`}
+          />
+        ) : null}
+      </div>
+      <div id="headline" className="font-archivo-black text-lg capitalize md:text-2xl">
+        {index.index}
+      </div>
+    </div>
+  )
 }

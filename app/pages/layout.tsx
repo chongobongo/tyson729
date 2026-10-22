@@ -36,7 +36,7 @@ export default function PagesLayout({
         </div>
       </nav>
 
-      <div className="pt-[68px] sm:pt-0">
+      <div className="flex min-h-0 flex-1 flex-col pt-[68px] sm:pt-0">
         {children}
       </div>
     </>

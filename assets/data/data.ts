@@ -1,117 +1,82 @@
-import union from "@/assets/imgs/folio-directory/directory/film-samwong-babylon.jpg"
-import storefront from "@/assets/imgs/folio-directory/directory/storefront-goodies-lbc.jpg"
-import structural from "@/assets/imgs/folio-directory/structural/spacemountain.dwi.jpg"
-import vehicle from "@/assets/imgs/folio-directory/vehicle/helicopter-barry.jpg"
-import media from "@/assets/imgs/folio-directory/media/backlit-hardees.jpg"
-import entertainment from "@/assets/imgs/folio-directory/entertianment/pinball.scenario.jpg"
+// Job Data
 
-import corporate from "@/assets/imgs/folio-directory/corporate/aviner.2.viejo.jpg"
-import wall from "@/assets/imgs/folio-directory/wall/strawman-tezza.jpg"
-
-
-// Job List Images
+// Images
 
 // Barry
-import barry from "@/assets/imgs/jobs/barry/helicopter-barry.jpg"
-import barryLogo from "@/assets/imgs/jobs/barry/barryLogo.jpg"
-import barry001 from "@/assets/imgs/jobs/barry/heli-2-barry.jpg"
+import barry_001 from "@/assets/imgs/000_helicopter_barry_001.jpg"
+import barry_002 from "@/assets/imgs/000_helicopter_barry_002.jpg"
+import barry_003 from "@/assets/imgs/000_helicopter_barry_003.jpg"
+import barry_004 from "@/assets/imgs/000_helicopter_barry_005.jpg"
 // Babylon
-import babylon from "@/assets/imgs/jobs/babylon/zuckers.jpg"
-import babylonLogo from "@/assets/imgs/jobs/babylon/babylonLogo.jpg"
-import babylon001 from "@/assets/imgs/jobs/babylon/ambulance_001_babylon.jpg"
+import babylon_001 from "@/assets/imgs/100_zuckers_babylon_001.jpg"
 // The Land
-import theLand from "@/assets/imgs/jobs/The Land/land.helmet.jpg"
-import theLandLogo from "@/assets/imgs/jobs/The Land/theLandLogo.jpg"
-
-export const folioDirectoryIndex = [
-    {
-        id: "0",
-        img: union.src,
-        url: "union",
-        header: "729",
-    },
-    {
-        id: "1",
-        img: storefront.src,
-        url: "storefront",
-        header: "Storefront",
-    },
-    {
-        id: "2",
-        img: structural.src,
-        url: "structural",
-        header: "Structural",
-    },
-        {
-        id: "3",
-        img: vehicle.src,
-        url: "vehicle",
-        header: "Vehicle",
-    },
-    {
-        id: "4",
-        img: media.src,
-        url: "media",
-        header: "Media",
-    },
-    {
-        id: "5",
-        img: entertainment.src,
-        url: "entertainment",
-        header: "Entertainment",
-    },
-    {
-        id: "6",
-        img: corporate.src,
-        url: "corporate",
-        header: "Corporate",
-    },
-    {
-        id: "7",
-        img: wall.src,
-        url: "wall",
-        header: "Wall",
-    }
-]
+import land_001 from "@/assets/imgs/200_land_helmet_001.jpg"
+import land_002 from "@/assets/imgs/200_pittsburgh_land_002.jpg"
+// Paramount Water Tower
+import watertowerParamount001 from "@/assets/imgs/400_watertower_paramount_001.jpg"
+// Goodies
+import goodies_001 from "@/assets/imgs/300_goodies-longbeach_001.jpg"
+// Tower of Terror
+import tot_001 from "@/assets/imgs/500_tot_caladvent_001.jpg"
 
 export const jobData = [
    {
-        id: "0",
+        id: "000",
         title: "Barry",
         paint_boss: "Scott Rainie",
         job_title: "Set Painter/Signwriter",
         job_description: "Stage and Location, Hand Lettering, Applied Graphics, Matched Color, Various Finishes",
-        catagory: "union",
+        index: "union",
         imgs: [
-            { src: barry.src, tag: ["hero", "union", "barry"], alt: "Barry Image" },
-            { src: barry001.src, tag: ["helicopter", "vehicle_hero", "barry"], alt: "Helicopter - Barry" },
+            { src: barry_001.src, tag: ["hero", "barry"], alt: "Helecopter Barry" },
+            { src: barry_002.src, tag: ["barry"], alt: "Helecopter Barry" },
+            { src: barry_003.src, tag: ["barry"], alt: "Helecopter Barry" },
+            { src: barry_004.src, tag: ["barry"], alt: "Helecopter Barry" },
         ],
-        logo: barryLogo.src
     },
     {
-        id: "1",
+        id: "100",
         title: "Babylon",
-        catagory: "union",
+        index: "union",
         imgs: [
-            { src: babylon.src, tag: ["hero", "union", "babylon"], alt: "Babylon Image" },
-            { src: babylon001.src, tag: ["ambulance", "vehicle_hero", "babylon"], alt: "Ambulance - Babylon" },
+            { src: babylon_001.src, tag: ["hero", "union", "babylon"], alt: "Babylon Image" },
         ],
-        logo: babylonLogo.src
     },
     {
-        id: "3",
+        id: "200",
         title: "The Land",
-        catagory: "union",
+        index: "union",
         imgs: [
-            { src: theLand.src, tag: ["hero", "union", "the land", "land"], alt: "The Land Image" },
+            { src: land_001.src, tag: ["hero", "union", "the land", "land"], alt: "The Land Image" },
+            { src: land_002.src, tag: ["land"], alt: "The Land Image" },
         ],
-        logo: theLandLogo.src
-    }
-]
-
-export const jobDescription = [
+    },
     {
-        id: "0",
-        title: "Babylon"
-    }
+        id: "300",
+        title: "Goodies",
+        index: "storefront",
+        imgs: [
+            { src: goodies_001.src, tag: ["hero"], alt: "Goodies Image" },
+        ],
+    },
+   {
+        id: "400",
+        title: "Watertower / Paramount Pictures",
+        paint_boss: "Leonard Russo",
+        job_title: "Signwriter",
+        job_description: "Paint letter and logo on water tower",
+        index: "union",
+        imgs: [
+            { src: watertowerParamount001.src, tag: ["hero"], alt: "Paramount Water Tower" }],
+    },
+       {
+        id: "500",
+        title: "Tower of Terror",
+        paint_boss: "Tom Stapleton",
+        job_title: "Administration",
+        job_description: "Help run the paint crew, some light scenic",
+        index: "entertainment",
+        imgs: [
+            { src: tot_001.src, tag: ["hero"], alt: "Tower of Terror" }],
+    },
 ]

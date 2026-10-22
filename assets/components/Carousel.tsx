@@ -17,6 +17,10 @@ interface ImageCarouselProps {
 
 export const ImageCarousel = ({ images }: ImageCarouselProps) => {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [touchStart, setTouchStart] = useState<number | null>(null)
+    const [touchEnd, setTouchEnd] = useState<number | null>(null)
+
+    const minSwipeDistance = 50
 
     if (!images || images.length === 0) {
         return (
@@ -38,10 +42,38 @@ export const ImageCarousel = ({ images }: ImageCarouselProps) => {
         setActiveIndex(index)
     }
 
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null)
+        setTouchStart(e.targetTouches[0].clientX)
+    }
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX)
+    }
+
+    const onTouchEnd = () => {
+        if (touchStart === null || touchEnd === null) return
+
+        const distance = touchStart - touchEnd
+        const isLeftSwipe = distance > minSwipeDistance
+        const isRightSwipe = distance < -minSwipeDistance
+
+        if (isLeftSwipe) {
+            goToNext()
+        } else if (isRightSwipe) {
+            goToPrevious()
+        }
+    }
+
     return (
         <div className='relative w-full'>
             {/* Main image display */}
-            <div className='relative w-full h-64 md:h-96 rounded-lg overflow-hidden bg-gray-100'>
+            <div
+                className='relative w-full h-64 md:h-96 rounded-lg overflow-hidden bg-gray-100'
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+            >
                 <Image
                     src={images[activeIndex].src}
                     fill

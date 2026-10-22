@@ -1,24 +1,31 @@
 // Directory
 
+import Link from 'next/link'
 import { IndexCard } from '@/assets/components/IndexCard'
-import { folioDirectoryIndex } from '@/assets/data/data'
+import { jobData } from '@/assets/data/data'
 
 const FolioPage = () => {
+  const uniqueCategories = jobData.filter(
+    (item, i) => jobData.findIndex((j) => j.index === item.index) === i
+  )
 
   return (
-      <div className="p-4 sm:p-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        {folioDirectoryIndex.map((item) => (
+    <div className="grid min-h-0 flex-1 grid-cols-2 content-start gap-4 overflow-y-auto bg-gray-50 p-4 sm:grid-cols-3 sm:p-16 lg:grid-cols-5">
+      {uniqueCategories.map((item) => (
+        <Link
+          href={`/pages/folio/catagory/${item.index}`}
+          key={item.index}
+        >
           <IndexCard
-            key={item.id}
-            catagory={{
+            index={{
               id: item.id,
-              url: item.url,
-              header: item.header,
-              img: item.img,
+              index: item.index,
+              img: item.imgs?.find((img) => img.tag.includes('hero'))?.src ?? '',
             }}
           />
-        ))}
-      </div>
+        </Link>
+      ))}
+    </div>
   )
 }
 
